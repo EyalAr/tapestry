@@ -1,0 +1,28 @@
+{
+  "name": "tapestry",
+  "version": "0.0.0",
+  "description": "Minimal testing framework for frontends and backends",
+  "main": "index.js",
+  "dependencies": {
+    "async": "^0.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/EyalAr/tapestry.git"
+  },
+  "keywords": [
+    "tap",
+    "test",
+    "framework"
+  ],
+  "author": "Eyal Arubas <eyalarubas@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EyalAr/tapestry/issues"
+  },
+  "homepage": "https://github.com/EyalAr/tapestry"
+}
