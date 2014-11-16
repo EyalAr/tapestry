@@ -1,56 +1,70 @@
 var suite = require('./');
 
-suite("suite 1", function(test, subsuite){
+suite("My application", function(test, suite){
 
-    test("test 1", function(t){
-        setTimeout(function(){
-            t.notOk();
-        }, 100);
+    test("basic function 1", function(t){
+        t.assert("foo" === "bar", "foo === bar");
     });
 
-    test("test 2", function(t){
+    test("basic function 2", function(t){
         setTimeout(function(){
             t.ok();
         }, 100);
     });
 
-    test("test 3", function(t){
+    test("basic function 3", function(t){
         t.ok();
     });
 
-    subsuite("subsuite 1.1", function(test){
+    suite("login", function(test){
 
-        test("test 1", function(t){
+        test("with incorrect password", function(t){
             setTimeout(function(){
-                t.notOk();
-            }, 100);
+                t.notOk("login should've failed");
+            }, 300);
         });
 
-        test("test 2", function(t){
-            t.notOk();
+        test("with correct password", function(t){
+            t.notOk("login should've succeeded");
         });
 
     });
 
-    subsuite("subsuite 1.2", function(test, subsuite){
+    suite("shopping cart", function(test, suite){
 
-        test("test 1", function(t){
+        test("go to shopping cart page", function(t){
             setTimeout(function(){
                 t.ok();
-            }, 100);
+            }, 700);
         });
 
-        subsuite("subsuite 1.2.1", function(test, subsuite){
+        suite("items", function(test, suite){
 
-            test("test 1", function(t){ t.ok(); });
-            test("test 2", function(t){ t.ok(); });
-            test("test 3", function(t){ t.ok(); });
-            test("test 4", function(t){ t.notOk(); });
+            suite("additions", function(test){
 
-            subsuite("subsuite 1.2.1.1", function(test){
+                test("add first item", function(t){
+                    setTimeout(function(){
+                        t.notOk("something went wrong");
+                    }, 400);
+                });
 
-                test("test 1", function(t){ t.notOk(); });
-                test("test 2", function(t){ t.ok(); });
+                test("add second item", function(t){
+                    t.ok();
+                });
+
+            });
+
+            suite("removals", function(test){
+
+                test("remove first item", function(t){
+                    setTimeout(function(){
+                        t.ok();
+                    }, 450);
+                });
+
+                test("remove second item", function(t){
+                    t.notOk("can't remove item which doesn't exist");
+                });
 
             });
 
@@ -58,6 +72,4 @@ suite("suite 1", function(test, subsuite){
 
     });
 
-}, function(results){
-    console.log(JSON.stringify(results, 0, 4));
 });
