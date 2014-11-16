@@ -1,3 +1,5 @@
+![Logo](logo.png)
+
 # Tapestry
 
 A minimal JavaScript testing framework for frontends and backends.
