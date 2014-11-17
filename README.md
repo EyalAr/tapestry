@@ -2,9 +2,7 @@
 
 A minimal JavaScript testing framework for frontends and backends.
 
-See [demo.js](demo.js) for current functionalities.
-
-**Goals:**
+## Goals
 
 0. Easy to test with.
 0. Easy to extend.
@@ -14,3 +12,9 @@ See [demo.js](demo.js) for current functionalities.
 0. Tests are runnable scripts.
 0. Run both in browser and node.
 0. Have an optional [TAP](http://testanything.org/) producer.
+
+## Demo
+
+See [demo.js](demo.js) for current functionalities.
+
+![Demo](assets/demo.gif)
