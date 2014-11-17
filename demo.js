@@ -4,7 +4,7 @@ suite("My application", function(test, suite){
 
     test("basic function 1", function(t){
         t.assert("foo" === "bar", "foo === bar");
-    });
+    }).todo("will land in version 2.3.2");
 
     test("basic function 2", function(t){
         setTimeout(function(){
@@ -22,7 +22,7 @@ suite("My application", function(test, suite){
             setTimeout(function(){
                 t.notOk("login should've failed");
             }, 300);
-        });
+        }).skip("logins server is down");
 
         test("with correct password", function(t){
             t.notOk("login should've succeeded");
