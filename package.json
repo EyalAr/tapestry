@@ -4,7 +4,8 @@
   "description": "Minimal testing framework for frontends and backends",
   "main": "index.js",
   "dependencies": {
-    "async": "^0.9.0"
+    "async": "^0.9.0",
+    "chalk": "^0.5.1"
   },
   "devDependencies": {},
   "scripts": {
