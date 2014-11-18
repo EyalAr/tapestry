@@ -13,7 +13,11 @@ suite("My application", function(test, suite){
     });
 
     test("basic function 3", function(t){
-        t.ok();
+        throw Error("Ooops");
+    });
+
+    test("basic function 4", function(){
+        // all good
     });
 
     suite("login", function(test){
