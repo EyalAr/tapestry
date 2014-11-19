@@ -17,4 +17,6 @@ A minimal JavaScript testing framework for frontends and backends.
 
 See [demo.js](demo.js) for current functionalities.
 
-![Demo](assets/demo.gif)
+![Demo Node](assets/demo.gif)
+
+![Demo Browser](assets/demo_browser.gif)
