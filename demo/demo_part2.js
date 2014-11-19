@@ -1,4 +1,4 @@
-var suite = require('../lib/reporters/tree');
+var suite = require('../');
 
 suite("My application - Part 2", function(test, suite){
 

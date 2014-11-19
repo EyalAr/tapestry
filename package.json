@@ -5,7 +5,8 @@
   "main": "index.js",
   "dependencies": {
     "async": "^0.9.0",
-    "chalk": "^0.5.1"
+    "chalk": "^0.5.1",
+    "nopt": "^3.0.1"
   },
   "devDependencies": {},
   "scripts": {
