@@ -13,13 +13,13 @@ A minimal JavaScript testing framework for frontends and backends.
 0. 'Todo' tests / suites. Write tests before the tested feature is ready, and mark the test as 'todo'. The test may fail, but it won't count until the feature is actually implemented.
 0. Suites are runnable scripts.
 0. Run both in browser and node.
-0. Have an optional [TAP](http://testanything.org/) producer.
+0. Have an optional [TAP](http://testanything.org/) reporter.
 
 ## Demo
 
 See [demo.js](demo.js) for current functionalities.
 
-Run it with different producers:
+Run it with different reporters:
 
 - `node demo/demo --tree`
 - `node demo/demo --TAP`
