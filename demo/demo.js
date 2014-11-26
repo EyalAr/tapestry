@@ -90,6 +90,47 @@ suite("My application", function(test, suite){
 
             });
 
+            suite("another sub-sub-module", function(test, suite){
+
+                // example for skipping an entire subsuite
+                suite("another sub-sub-sub-module", function(test, suite){
+
+                    // doesn't matter if tests here fail or succeed.
+                    // the entire suite is skipped.
+
+                    test("some function", function(t){
+                        setTimeout(function(){
+                            t.notOK();
+                        }, 300);
+                    });
+
+                    test("some other function", function(t){
+                        setTimeout(function(){
+                            t.OK();
+                        }, 300);
+                    });
+
+                }).skip();
+
+                // example for 'todo'ing an entire subsuite
+                suite("another sub-sub-sub-module", function(test, suite){
+
+                    test("some function", function(t){
+                        setTimeout(function(){
+                            t.notOK();
+                        }, 300);
+                    });
+
+                    test("some other function", function(t){
+                        setTimeout(function(){
+                            t.OK();
+                        }, 300);
+                    });
+
+                }).todo();
+
+            });
+
         });
 
     });
