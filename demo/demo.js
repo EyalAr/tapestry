@@ -6,17 +6,27 @@ suite("My application", function(test, suite){
     // so this failure be noted, but not counted.
     test("basic function 1", function(t){
         setTimeout(function(){
-            t.assert("foo" === "bar", "foo === bar");
+            throw Error("async failure? no problem!");
         }, 500);
-    }).todo();
+    });
 
     // this test will time out after 300ms.
     // it would've passed if it had 500ms.
     test("basic function 2", function(t){
+        var self = this;
         setTimeout(function(){
-            t.ok();
+            t.assert(self.db.get("hello") === "HELLO");
         }, 500);
-    }).timeout(300);
+    }).setup(function(){
+        this.db = {
+            get: function(key){
+                return key.toUpperCase();
+            }
+        };
+    }).teardown(function(done){
+        // disconnect from db...
+        setTimeout(done, 100);
+    });
 
     // this test will fail because the test
     // function throws synchronously
