@@ -31,3 +31,72 @@ Output of demo script on Node:
 Output of demo script on the browser (using _browserify_);
 
 ![Demo Browser](assets/demo_browser.gif)
+
+## Usage & API
+
+0. Tests are grouped into suites.
+0. Suites are defined with `suite( ... )`.
+
+    ```Javascript
+    suite("suite's description", function(test, suite){
+        // ...
+    });
+    ```
+
+0. Suites can be nested.
+
+    ```Javascript
+    suite("suite's description", function(test, suite){
+
+        suite("nested suite", function(test, suite){
+            // ...
+        });
+
+        suite("another nested suite", function(test, suite){
+            // ...
+        });
+
+    });
+    ```
+
+0. Tests can be synchronous.
+
+    ```Javascript
+    suite("suite's description", function(test, suite){
+
+        test("a sync test", function(){
+            throw Error("This test will fail!");
+        });
+
+    });
+    ```
+
+0. Tests can be asynchronous.
+
+    ```Javascript
+    suite("suite's description", function(test, suite){
+
+        test("a sync test", function(t){
+            setTimout(function(){
+                t.notOK("This test will fail!");
+            }, 100);
+        });
+
+    });
+    ```
+
+0. Async tests may throw exceptions to indicate failure.
+
+    ```Javascript
+    suite("suite's description", function(test, suite){
+
+        test("a sync test", function(t){
+            setTimout(function(){
+                throw Error("This test will fail!");
+            }, 100);
+        });
+
+    });
+    ```
+
+    **But remember** to indicate the test is async by passing the `t` parameter.
